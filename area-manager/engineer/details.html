@@ -20,6 +20,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../../public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../public/dist/css/AdminLTE.min.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="../../public/bower_components/jvectormap/jquery-jvectormap.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
@@ -35,6 +37,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Google Font -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 425px;
+        }
+    </style>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -137,13 +147,30 @@ desired effect
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">NAVIGATION</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li><a href="/area-manager/index.html"><i class="fa fa-link"></i> <span>Home</span></a></li>
-                    <li><a href="/area-manager/job/index.html"><i class="fa fa-link"></i> <span>Jobs</span></a>
+                    <li><a href="/area-manager/index.html"><i class="fa fa-link"></i>
+                            <span>Home</span>
+                        </a></li>
+                    <li><a href="/area-manager/job/index.html"><i class="fa fa-link"></i>
+                            <span>Jobs</span>
+                        </a></li>
+
+                    <li class="treeview active menu-open">
+                        <a href="#">
+                            <i class="fa fa-share"></i> <span>Engineers</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="/area-manager/engineer/index.html"><i
+                                        class="fa fa-circle-o"></i> View</a></li>
+                            <li><a href="/area-manager/engineer/locations.html"><i class="fa fa-circle-o"></i>
+                                    Locations</a></li>
+                        </ul>
                     </li>
-                    <li class="active"><a href="/area-manager/engineer/index.html"><i class="fa fa-link"></i>
-                            <span>Engineers</span></a></li>
-                    <li><a href="/area-manager/analysis/index.html"><i class="fa fa-link"></i> <span>Analysis</span></a>
-                    </li>
+                    <li><a href="/area-manager/analysis/index.html"><i class="fa fa-link"></i>
+                            <span>Analysis</span>
+                        </a></li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
@@ -189,7 +216,9 @@ desired effect
                                         <b>Work hours this month</b> <a class="pull-right">176</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Salary</b> <a class="pull-right">$20/hr</a>
+                                        <b>Salary</b>
+                                        <input type="text" class="text-right form-control" value="$20" disabled="">
+                                        <!-- <a class="pull-right">$20/hr</a> -->
                                     </li>
                                 </ul>
 
@@ -245,7 +274,7 @@ desired effect
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#jobs" data-toggle="tab">Jobs</a></li>
                                 <li><a href="#timeline" data-toggle="tab">Timeline</a></li>
-                                <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                                <li><a href="#location" data-toggle="tab">Location</a></li>
                             </ul>
                             <div class="tab-content">
                                 <div class="active tab-pane" id="jobs">
@@ -474,7 +503,7 @@ desired effect
                                         <!-- timeline time label -->
                                         <li class="time-label">
                                             <span class="bg-red">
-                                                10 Feb. 2014
+                                                31 March. 2019
                                             </span>
                                         </li>
                                         <!-- /.timeline-label -->
@@ -485,18 +514,15 @@ desired effect
                                             <div class="timeline-item">
                                                 <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
 
-                                                <h3 class="timeline-header"><a href="#">Support Team</a> sent you an
-                                                    email</h3>
+                                                <h3 class="timeline-header"><a href="#">John Doe</a> has accepted <a
+                                                        href="#">JOB-42</a></h3>
 
                                                 <div class="timeline-body">
-                                                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                                                    weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                                                    jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                                                    quora plaxo ideeli hulu weebly balihoo...
+                                                    John Doe is making preparations for the job.
                                                 </div>
                                                 <div class="timeline-footer">
-                                                    <a class="btn btn-primary btn-xs">Read more</a>
-                                                    <a class="btn btn-danger btn-xs">Delete</a>
+                                                    <a class="btn btn-primary btn-xs">Contact</a>
+                                                    <a class="btn btn-danger btn-xs">View Job</a>
                                                 </div>
                                             </div>
                                         </li>
@@ -508,56 +534,94 @@ desired effect
                                             <div class="timeline-item">
                                                 <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
 
-                                                <h3 class="timeline-header no-border"><a href="#">Sarah Young</a>
-                                                    accepted your friend request
+                                                <h3 class="timeline-header no-border">Scheduler 1
+                                                    has assigned <a href="#">JOB-42</a> to John Doe
                                                 </h3>
-                                            </div>
-                                        </li>
-                                        <!-- END timeline item -->
-                                        <!-- timeline item -->
-                                        <li>
-                                            <i class="fa fa-comments bg-yellow"></i>
-
-                                            <div class="timeline-item">
-                                                <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
-
-                                                <h3 class="timeline-header"><a href="#">Jay White</a> commented on your
-                                                    post</h3>
-
-                                                <div class="timeline-body">
-                                                    Take me to your leader!
-                                                    Switzerland is small and neutral!
-                                                    We are more like Germany, ambitious and misunderstood!
-                                                </div>
-                                                <div class="timeline-footer">
-                                                    <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                                                </div>
                                             </div>
                                         </li>
                                         <!-- END timeline item -->
                                         <!-- timeline time label -->
                                         <li class="time-label">
                                             <span class="bg-green">
-                                                3 Jan. 2014
+                                                30 March. 2019
                                             </span>
                                         </li>
                                         <!-- /.timeline-label -->
                                         <!-- timeline item -->
                                         <li>
-                                            <i class="fa fa-camera bg-purple"></i>
+                                            <i class="fa fa-envelope bg-red"></i>
 
                                             <div class="timeline-item">
-                                                <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
+                                                <span class="time"><i class="fa fa-clock-o"></i> 12:40</span>
 
-                                                <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos
-                                                </h3>
+                                                <h3 class="timeline-header"><a href="#">John Doe</a> has completed his
+                                                    repair for <a href="#">JOB-31</a></h3>
+                                                <div class="timeline-body">
+                                                    Total time elapsed for <a href="#">JOB-31</a>:<br />
+                                                    2 hours 6
+                                                    minutes.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- END timeline item -->
+                                        <!-- timeline item -->
+                                        <li>
+                                            <i class="fa fa-envelope bg-orange"></i>
+
+                                            <div class="timeline-item">
+                                                <span class="time"><i class="fa fa-clock-o"></i> 10:34</span>
+
+                                                <h3 class="timeline-header"><a href="#">John Doe</a> has started his
+                                                    repair for <a href="#">JOB-31</a></h3>
+                                            </div>
+                                        </li>
+                                        <!-- END timeline item -->
+                                        <!-- timeline item -->
+                                        <li>
+                                            <i class="fa fa-envelope bg-blue"></i>
+
+                                            <div class="timeline-item">
+                                                <span class="time"><i class="fa fa-clock-o"></i> 10:20</span>
+
+                                                <h3 class="timeline-header"><a href="#">John Doe</a> has reached fault
+                                                    site for <a href="#">JOB-31</a></h3>
 
                                                 <div class="timeline-body">
-                                                    <img src="http://placehold.it/150x100" alt="..." class="margin">
-                                                    <img src="http://placehold.it/150x100" alt="..." class="margin">
-                                                    <img src="http://placehold.it/150x100" alt="..." class="margin">
-                                                    <img src="http://placehold.it/150x100" alt="..." class="margin">
+                                                    John Doe is ready to inspect and remedy the fault.
                                                 </div>
+                                            </div>
+                                        </li>
+                                        <!-- END timeline item -->
+                                        <!-- timeline item -->
+                                        <li>
+                                            <i class="fa fa-envelope bg-green"></i>
+
+                                            <div class="timeline-item">
+                                                <span class="time"><i class="fa fa-clock-o"></i> 09:17</span>
+
+                                                <h3 class="timeline-header"><a href="#">John Doe</a> has accepted <a
+                                                        href="#">JOB-31</a></h3>
+
+                                                <div class="timeline-body">
+                                                    John Doe is making preparations for the job.
+                                                </div>
+                                                <div class="timeline-footer">
+                                                    <a class="btn btn-primary btn-xs">Contact</a>
+                                                    <a class="btn btn-danger btn-xs">View Job</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- END timeline item -->
+                                        <!-- timeline item -->
+                                        <li>
+                                            <i class="fa fa-user bg-aqua"></i>
+
+                                            <div class="timeline-item">
+                                                <span class="time"><i class="fa fa-clock-o"></i> 08:50</span>
+
+                                                <h3 class="timeline-header no-border">Scheduler 1
+                                                    has assigned <a href="#">JOB-31</a> to John Doe
+                                                </h3>
                                             </div>
                                         </li>
                                         <!-- END timeline item -->
@@ -568,65 +632,25 @@ desired effect
                                 </div>
                                 <!-- /.tab-pane -->
 
-                                <div class="tab-pane" id="settings">
-                                    <form class="form-horizontal">
-                                        <div class="form-group">
-                                            <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="inputName"
-                                                    placeholder="Name">
-                                            </div>
+                                <div class="tab-pane" id="location">
+                                    <!-- Map will be created here -->
+                                    <div id="map" style="height: 400px;">
+                                        <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+                                            <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+                                            <script>(function () {
+                                                    var setting = { "height": 400, "zoom": 17, "queryString": "Singapore Institute of Technology (SIT@NYP), Singapore", "place_id": "ChIJq6GwbekW2jERzeHWu0_lCz0", "satellite": true, "centerCoord": [1.3776023503819004, 103.84882379999999], "cid": "0x3d0be54fbbd6e1cd", "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3", "embed_id": "27074" };
+                                                    var d = document;
+                                                    var s = d.createElement('script');
+                                                    s.src = 'https://1map.com/js/script-for-user.js?embed_id=27074';
+                                                    s.async = true;
+                                                    s.onload = function (e) {
+                                                        window.OneMap.initMap(setting)
+                                                    };
+                                                    var to = d.getElementsByTagName('script')[0];
+                                                    to.parentNode.insertBefore(s, to);
+                                                })();</script><a href="https://1map.com/map-embed?embed_id=27074"></a>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="inputEmail"
-                                                    placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="inputName"
-                                                    placeholder="Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputExperience"
-                                                class="col-sm-2 control-label">Experience</label>
-
-                                            <div class="col-sm-10">
-                                                <textarea class="form-control" id="inputExperience"
-                                                    placeholder="Experience"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
-
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="inputSkills"
-                                                    placeholder="Skills">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox"> I agree to the <a href="#">terms and
-                                                            conditions</a>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-danger">Submit</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
                                 <!-- /.tab-pane -->
                             </div>
@@ -662,6 +686,9 @@ desired effect
         <!-- DataTables -->
         <script src="../../public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="../../public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <!-- jvectormap -->
+        <script src="../../public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="../../public/plugins/jvectormap/jquery-jvectormap-asia-mill.js"></script>
         <!-- AdminLTE App -->
         <script src="../../public/dist/js/adminlte.min.js"></script>
         <!-- page script -->
@@ -680,9 +707,8 @@ desired effect
                 $("td:contains('High')").wrapInner("<span class='badge bg-red'></span>");
                 $("td:contains('ASSIGNED')").wrapInner("<span class='badge bg-orange'></span>");
                 $("td:contains('COMPLETED')").wrapInner("<span class='badge bg-green'></span>");
-                $("td:contains('View')").wrapInner("<a href='/area-manager/engineer/details.html' class='btn btn-block btn-primary btn-sm'></a>");
-
-            })
+                $("td:contains('View')").wrapInner("<a href='/area-manager/job/details.html' class='btn btn-block btn-primary btn-sm'></a>");
+            });
         </script>
         <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

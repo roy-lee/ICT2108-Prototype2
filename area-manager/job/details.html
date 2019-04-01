@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Job Management | Jobs</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../../public/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../public/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../../public/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../public/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+    <link rel="stylesheet" href="../../public/dist/css/skins/skin-red.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+
+<body class="hold-transition skin-red sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Main Header -->
+        <header class="main-header">
+
+            <!-- Logo -->
+            <a href="index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>A</b>LT</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Job</b>Management</span>
+            </a>
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="../../public/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs">Area Manager 1</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="../../public/dist/img/user2-160x160.jpg" class="img-circle"
+                                        alt="User Image">
+
+                                    <p>
+                                        Area Manager 1 - Web Developer
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="../../login.html" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="../../public/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Area Manager 1</p>
+                        <!-- Status -->
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">NAVIGATION</li>
+                    <!-- Optionally, you can add icons to the links -->
+                    <li><a href="/area-manager/index.html"><i class="fa fa-link"></i>
+                        <span>Home</span>
+                      </a></li>
+                    <li class="active"><a href="/area-manager/job/index.html"><i class="fa fa-link"></i>
+                        <span>Jobs</span>
+                      </a></li>
+          
+                    <li class="treeview">
+                      <a href="#">
+                        <i class="fa fa-share"></i> <span>Engineers</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li><a href="/area-manager/engineer/index.html"><i class="fa fa-circle-o"></i> View</a>
+                        </li>
+                        <li><a href="/area-manager/engineer/locations.html"><i class="fa fa-circle-o"></i> Locations</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="/area-manager/analysis/index.html"><i class="fa fa-link"></i>
+                        <span>Analysis</span>
+                      </a></li>
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Job Details
+                    <small>Information of Job</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="/area-manager/index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="/area-manager/job/index.html"> Jobs</a></li>
+                    <li><a href="/area-manager/job/details.html"> Details</a></li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">JOB-31 Details</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <!-- The timeline -->
+                                <ul class="timeline timeline-inverse">
+                                    <!-- timeline time label -->
+                                    <li class="time-label">
+                                        <span class="bg-green">
+                                            30 March. 2019
+                                        </span>
+                                    </li>
+                                    <!-- /.timeline-label -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-envelope bg-red"></i>
+
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 12:40</span>
+
+                                            <h3 class="timeline-header"><a href="/area-manager/engineer/details.html">John Doe</a> has completed his
+                                                repair for <a href="/area-manager/job/details.html">JOB-31</a></h3>
+                                            <div class="timeline-body">
+                                                Total time elapsed for <a href="/area-manager/job/details.html">JOB-31</a>:<br />
+                                                2 hours 6
+                                                minutes.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-envelope bg-orange"></i>
+
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 10:34</span>
+
+                                            <h3 class="timeline-header"><a href="/area-manager/engineer/details.html">John Doe</a> has started his
+                                                repair for <a href="/area-manager/job/details.html">JOB-31</a></h3>
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-envelope bg-blue"></i>
+
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 10:20</span>
+
+                                            <h3 class="timeline-header"><a href="/area-manager/engineer/details.html">John Doe</a> has reached fault
+                                                site for <a href="/area-manager/job/details.html">JOB-31</a></h3>
+
+                                            <div class="timeline-body">
+                                                John Doe is ready to inspect and remedy the fault.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-envelope bg-green"></i>
+
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 09:17</span>
+
+                                            <h3 class="timeline-header"><a href="/area-manager/engineer/details.html">John Doe</a> has accepted <a
+                                                    href="#">JOB-31</a></h3>
+
+                                            <div class="timeline-body">
+                                                John Doe is making preparations for the job.
+                                            </div>
+                                            <div class="timeline-footer">
+                                                <a class="btn btn-primary btn-xs">Contact</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-user bg-aqua"></i>
+
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 08:50</span>
+
+                                            <h3 class="timeline-header no-border">Scheduler 1
+                                                has assigned <a href="/area-manager/job/details.html">JOB-31</a> to <a href="/area-manager/engineer/details.html">John Doe</a>
+                                            </h3>
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <!-- timeline item -->
+                                    <li>
+                                        <i class="fa fa-user bg-aqua"></i>
+
+                                        <div class="timeline-item">
+                                            <span class="time"><i class="fa fa-clock-o"></i> 08:40</span>
+
+                                            <h3 class="timeline-header no-border">Scheduler 1
+                                                has created <a href="/area-manager/job/details.html">JOB-31</a>
+                                            </h3>
+                                            <div class="timeline-body">
+                                                <style type="text/css">
+                                                    .tg {
+                                                        border-collapse: collapse;
+                                                        border-spacing: 0;
+                                                    }
+
+                                                    .tg td {
+                                                        font-family: Arial, sans-serif;
+                                                        font-size: 14px;
+                                                        padding: 10px 5px;
+                                                        border-style: solid;
+                                                        border-width: 1px;
+                                                        overflow: hidden;
+                                                        word-break: normal;
+                                                        border-color: black;
+                                                    }
+
+                                                    .tg th {
+                                                        font-family: Arial, sans-serif;
+                                                        font-size: 14px;
+                                                        font-weight: normal;
+                                                        padding: 10px 5px;
+                                                        border-style: solid;
+                                                        border-width: 1px;
+                                                        overflow: hidden;
+                                                        word-break: normal;
+                                                        border-color: black;
+                                                    }
+
+                                                    .tg .tg-1wig {
+                                                        font-weight: bold;
+                                                        text-align: left;
+                                                        vertical-align: top
+                                                    }
+
+                                                    .tg .tg-0lax {
+                                                        text-align: left;
+                                                        vertical-align: top
+                                                    }
+                                                </style>
+                                                <table class="tg">
+                                                    <tr>
+                                                        <th class="tg-1wig">ID</th>
+                                                        <th class="tg-0lax">JOB-31</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tg-1wig">Fault Type</td>
+                                                        <td class="tg-0lax">Cable Fault</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tg-1wig">Description</td>
+                                                        <td class="tg-0lax">Loose and frayed cables on transmitter
+                                                            #TM-38. Needs replacement.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tg-1wig">Severity</td>
+                                                        <td class="tg-0lax">Medium</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tg-1wig">Job Created Time</td>
+                                                        <td class="tg-0lax">30 March 2019, 0840 HRS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tg-1wig">Estimated Completion</td>
+                                                        <td class="tg-0lax">30 March 2019, 1300 HRS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="tg-1wig">Location</td>
+                                                        <td class="tg-0lax">
+                                                            <a target="_blank"
+                                                                href="https://www.google.com/maps/place/Singapore+Institute+of+Technology+(SIT@NYP)/@1.377523,103.848837,416m/data=!3m1!1e3!4m5!3m4!1s0x0:0x3d0be54fbbd6e1cd!8m2!3d1.3775234!4d103.8488373?hl=en-GB">
+                                                                Singapore Institute of Technology (SIT@NYP)
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="timeline-footer">
+                                                <a class="btn btn-warning disabled btn-xs">Edit Job</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- END timeline item -->
+                                    <li>
+                                        <i class="fa fa-clock-o bg-gray"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2019 <a href="#">Job Management System</a></strong>
+        </footer>
+        <!-- ./wrapper -->
+
+        <!-- REQUIRED JS SCRIPTS -->
+
+        <!-- jQuery 3 -->
+        <script src="../../public/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="../../public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../../public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../../public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../../public/dist/js/adminlte.min.js"></script>
+        <!-- page script -->
+        <script>
+            $(function () {
+            })
+        </script>
+        <!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
+</body>
+
+</html>
