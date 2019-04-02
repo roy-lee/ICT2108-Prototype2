@@ -16,6 +16,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../../public/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="../../public/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="../../public/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../public/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -164,11 +166,11 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="/area-manager/analysis/index.html"><i class="fa fa-link"></i>
+                            <li><a href="/area-manager/analysis/index.html"><i class="fa fa-line-chart"></i>
                                     <span>Graphs</span>
                                 </a></li>
                             <li class="active"><a href="/area-manager/analysis/report.html"><i
-                                        class="fa fa-circle-o"></i>
+                                        class="fa fa-file-text"></i>
                                     Generate Report</a></li>
                         </ul>
                     </li>
@@ -189,6 +191,7 @@ desired effect
                 <ol class="breadcrumb">
                     <li><a href="/area-manager/index.html"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li><a href="/area-manager/analysis/index.html"> Analysis</a></li>
+                    <li><a href="/area-manager/analysis/index.html"> Report</a></li>
                 </ol>
             </section>
 
@@ -197,11 +200,24 @@ desired effect
                 <div class="invoice" style="margin:0">
                     <!-- title row -->
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-8">
                             <h2 class="page-header">
                                 <i class="fa fa-globe"></i> Job Management System Report
-                                <small class="pull-right">Date: 01/04/2019</small>
+                                <!-- <small class="pull-right">Date: 01/04/2019</small> -->
                             </h2>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label>Date and time range:</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <input type="text" class="form-control pull-right" id="reservationtime">
+                                </div>
+                                <!-- /.input group -->
+                            </div>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -431,10 +447,19 @@ desired effect
         <script src="../../public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- AdminLTE App -->
         <script src="../../public/dist/js/adminlte.min.js"></script>
+        <!-- date-range-picker -->
+        <script src="../../public/bower_components/moment/min/moment.min.js"></script>
+        <script src="../../public/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 
         <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+        <script>
+            $(function () {
+                //Date range picker with time picker
+                $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
+            })
+        </script>
 </body>
 
 </html>
