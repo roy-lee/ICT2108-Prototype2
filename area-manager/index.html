@@ -463,7 +463,7 @@ desired effect
                       <th>Action</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="jobs">
                     <tr>
                       <td>JOB-HEAT-1</td>
                       <td>Network Fault</td>
@@ -1584,14 +1584,14 @@ desired effect
         $("td:contains('High')").wrapInner("<span class='badge bg-red'></span>");
         $("td:contains('UNASSIGNED')").wrapInner("<span class='badge bg-orange'></span>");
         $("td:contains('COMPLETED')").wrapInner("<span class='badge bg-green'></span>");
-        // $("td:contains('View')").wrapInner("<a href='./job/details.html' class='btn btn-block btn-primary btn-sm'></a>");
 
-        // Fix bug of not applying badge to all data in table
+        // TODO: Fix bug of not applying badge to all data in table
         $("td:contains('Busy')").wrapInner("<span class='badge bg-orange'></span>");
         $("td:contains('Available')").wrapInner("<span class='badge bg-green'></span>");
         $("td:contains('N.A')").wrapInner("<span class='badge bg-red'></span>");
         $("td:contains('View')").wrapInner("<a href='./engineer/details.html' class='btn btn-block btn-primary btn-sm'></a>");
 
+        $("#jobs a").attr("href", "./job/details.html")
       })
     </script>
 </body>
